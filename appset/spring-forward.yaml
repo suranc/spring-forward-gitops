@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: spring-forward-appset
-  namespace: harness-gitops
+  namespace: spring-forward-gitopsteam1
 spec:
   generators:
     - git:
