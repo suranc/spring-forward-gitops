@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: spring-forward-appset
+  namespace: harness-gitops
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/suranc/spring-forward-gitops.git
+        revision: master
+        files:
+        - path: "appset/cluster-config/**/spring-forward-config.json"
+  template:
+    metadata:
+      name: '{{cluster.name}}-spring-forward'
+    spec:
+      project: 7b20dab9
+      source:
+        helm:
+          parameters:
+          - name: image.tag
+            value: "{{imageTag}}"
+          valueFiles:
+          - values.yaml
+        path: helm-chart
+        repoURL: https://github.com/suranc/spring-forward-harness-example.git
+        targetRevision: master
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: spring-forward
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+        - Replace=true

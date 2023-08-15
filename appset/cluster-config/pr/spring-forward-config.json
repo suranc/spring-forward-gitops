@@ -1,0 +1,6 @@
+{
+  "cluster" : {
+    "name" : "pr"
+  },
+  "imageTag" : "pr-be141f7"
+}

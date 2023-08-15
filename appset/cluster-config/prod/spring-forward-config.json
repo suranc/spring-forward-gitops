@@ -1,0 +1,6 @@
+{
+  "cluster" : {
+    "name" : "prod"
+  },
+  "imageTag" : "release-909e241"
+}
