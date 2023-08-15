@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: spring-forward-appset
-  namespace: spring-forward-gitopsteam1
+  namespace: gitops-team-1
 spec:
   generators:
     - git:
@@ -27,7 +27,7 @@ spec:
         targetRevision: master
       destination:
         server: https://kubernetes.default.svc
-        namespace: spring-forward
+        namespace: gitops-team-1
       syncPolicy:
         automated:
           selfHeal: true
