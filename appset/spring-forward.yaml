@@ -14,7 +14,7 @@ spec:
     metadata:
       name: '{{cluster.name}}-spring-forward'
     spec:
-      project: 7b20dab9
+      project: 99cd9b82
       source:
         helm:
           parameters:
