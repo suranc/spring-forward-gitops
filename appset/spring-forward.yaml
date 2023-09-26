@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/suranc/spring-forward-gitops.git
-        revision: master
+        revision: main
         files:
         - path: "appset/cluster-config/**/spring-forward-config.json"
   template:
