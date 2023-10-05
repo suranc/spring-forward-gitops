@@ -4,7 +4,7 @@
   },
   "imageTag" : "latest",
   "destination": {
-    "server": "https://172.18.0.3:6443",
+    "server": "https://D9210A5EBD2C1D7E17FBACC52DED37B6.gr7.us-east-2.eks.amazonaws.com",
     "namespace": "gitops-team-1"
   }
 }
