@@ -16,7 +16,7 @@ spec:
     spec:
       project: eb5628ea
       source:
-        path: kustomize/overlays/{{cluster.name}}
+        path: 'kustomize/overlays/{{cluster.name}}'
         repoURL: https://github.com/suranc/spring-forward-harness-example.git
         targetRevision: master
       destination:
