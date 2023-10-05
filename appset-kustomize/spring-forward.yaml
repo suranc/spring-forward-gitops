@@ -19,13 +19,9 @@ spec:
         path: kustomize/overlays/{{cluster.name}}
         repoURL: https://github.com/suranc/spring-forward-harness-example.git
         targetRevision: master
-        # kustomize:
-        #   images:
-        #     - name: ghcr.io/suranc/spring-forward-harness-example
-        #       newTag: "{{imageTag}}"
       destination:
-        server: {{destination.server}}
-        namespace: {{destination.namespace}}
+        server: '{{destination.server}}'
+        namespace: '{{destination.namespace}}'
       syncPolicy:
         automated:
           selfHeal: true
