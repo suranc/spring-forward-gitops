@@ -19,6 +19,11 @@ spec:
         path: 'kustomize/overlays/{{cluster.name}}'
         repoURL: https://gitlab.harness.internal/root/spring-forward-harness-example.git
         targetRevision: master
+        kustomize:
+          images:
+            - name: ghcr.io/suranc/spring-forward-harness-example
+              newName: artifactory.harness.internal/cbp-docker/spring-forward-harness-example
+              newTag: "{{imageTag}}"
       destination:
         server: '{{destination.server}}'
         namespace: '{{destination.namespace}}'
