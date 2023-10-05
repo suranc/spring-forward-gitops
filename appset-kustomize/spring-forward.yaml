@@ -21,10 +21,7 @@ spec:
         targetRevision: master
         kustomize:
           images:
-          - "ghcr.io/suranc/spring-forward-harness-example=artifactory.harness.internal/cbp-docker/spring-forward-harness-example:{{imageTag}}"
-          # - name: ghcr.io/suranc/spring-forward-harness-example
-          #   newName: artifactory.harness.internal/cbp-docker/spring-forward-harness-example
-          #   newTag: "{{imageTag}}"
+          - "ghcr.io/suranc/spring-forward-harness-example=artifactory.harness.internal/example/spring-forward-harness-example:{{imageTag}}"
       destination:
         server: '{{destination.server}}'
         namespace: '{{destination.namespace}}'
