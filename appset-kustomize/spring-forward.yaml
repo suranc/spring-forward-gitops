@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: spring-forward-appset-kustomize
-  namespace: gitops-org-1
+  namespace: gitops-team-1
 spec:
   generators:
     - git:
