@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: spring-forward-appset
+  namespace: gitops-org-1
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/suranc/spring-forward-gitops.git
+        revision: main
+        files:
+        - path: "appset-kustomize/cluster-config/**/spring-forward-config.json"
+  template:
+    metadata:
+      name: '{{cluster.name}}-spring-forward'
+    spec:
+      project: 99cd9b82
+      source:
+        # helm:
+        #   parameters:
+        #   - name: image.tag
+        #     value: "{{imageTag}}"
+        #   valueFiles:
+        #   - values.yaml
+        path: kustomize/overlays/{{cluster.name}}
+        repoURL: https://github.com/suranc/spring-forward-harness-example.git
+        targetRevision: master
+        kustomize:
+          images:
+            - name: ghcr.io/suranc/spring-forward-harness-example
+              # newName: docker.intuit.com/dev/patterns/kubernetes/dev/argoproj/argocd-applicationset
+              newTag: "{{imageTag}}"
+      destination:
+        server: {{destination.server}}
+        namespace: {{destination.namespace}}
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+        - Replace=true

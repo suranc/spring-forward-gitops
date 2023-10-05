@@ -1,0 +1,10 @@
+{
+  "cluster" : {
+    "name" : "staging"
+  },
+  "imageTag" : "latest",
+  "destination": {
+    "server": "https://172.18.0.3:6443",
+    "namespace": "gitops-team-1"
+  }
+}
