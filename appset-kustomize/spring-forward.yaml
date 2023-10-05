@@ -14,21 +14,14 @@ spec:
     metadata:
       name: '{{cluster.name}}-spring-forward'
     spec:
-      project: 99cd9b82
+      project: eb5628ea
       source:
-        # helm:
-        #   parameters:
-        #   - name: image.tag
-        #     value: "{{imageTag}}"
-        #   valueFiles:
-        #   - values.yaml
         path: kustomize/overlays/{{cluster.name}}
         repoURL: https://github.com/suranc/spring-forward-harness-example.git
         targetRevision: master
         kustomize:
           images:
             - name: ghcr.io/suranc/spring-forward-harness-example
-              # newName: docker.intuit.com/dev/patterns/kubernetes/dev/argoproj/argocd-applicationset
               newTag: "{{imageTag}}"
       destination:
         server: {{destination.server}}
