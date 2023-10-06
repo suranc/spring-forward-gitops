@@ -31,7 +31,7 @@ spec:
         namespace: '{{destination.namespace}}'
       syncPolicy:
         automated:
-          selfHeal: true
+          selfHeal: false
         syncOptions:
         - CreateNamespace=true
         - Replace=true
