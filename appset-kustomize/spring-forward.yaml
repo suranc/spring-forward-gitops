@@ -13,6 +13,10 @@ spec:
   template:
     metadata:
       name: '{{cluster.name}}-spring-forward'
+      labels:
+        harness.io/envRef: '{{harness.envId}}'
+        harness.io/serviceRef: '{{harness.serviceTag}}'
+        harness.io/buildRef: '{{imageTag}}'
     spec:
       project: eb5628ea
       source:
