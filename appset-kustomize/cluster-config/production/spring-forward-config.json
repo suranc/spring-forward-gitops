@@ -8,7 +8,7 @@
     "namespace": "gitops-team-1"
   },
   "harness": {
-    "envTag": "production",
-    "serviceTag": "springforwardcustomize"
+    "envId": "production",
+    "serviceId": "springforwardcustomize"
   }
 }

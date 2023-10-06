@@ -8,7 +8,7 @@
   },
   "imageTag" : "latest",
   "harness": {
-    "envTag": "staging",
-    "serviceTag": "springforwardcustomize"
+    "envId": "staging",
+    "serviceId": "springforwardcustomize"
   }
 }
