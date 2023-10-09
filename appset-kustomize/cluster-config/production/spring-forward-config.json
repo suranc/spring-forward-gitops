@@ -5,7 +5,7 @@
   "imageTag" : "latest",
   "destination": {
     "server": "https://172.18.0.2:6443",
-    "namespace": "gitops-team-1"
+    "namespace": "gitops-dest-1"
   },
   "harness": {
     "envId": "production",
