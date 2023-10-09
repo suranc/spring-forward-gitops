@@ -18,7 +18,7 @@ spec:
         harness.io/serviceRef: '{{harness.serviceId}}'
         harness.io/buildRef: '{{imageTag}}'
     spec:
-      project: 99cd9b82
+      project: gitops-team-1
       source:
         path: 'kustomize/overlays/{{cluster.name}}'
         repoURL: https://github.com/suranc/spring-forward-harness-example
