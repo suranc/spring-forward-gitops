@@ -6,8 +6,8 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://gitlab.harness.internal/root/spring-forward-gitops.git
-        revision: main
+        repoURL: https://github.com/suranc/spring-forward-gitops
+        revision: kind
         files:
         - path: "appset-kustomize/cluster-config/**/spring-forward-config.json"
   template:
@@ -21,11 +21,11 @@ spec:
       project: eb5628ea
       source:
         path: 'kustomize/overlays/{{cluster.name}}'
-        repoURL: https://gitlab.harness.internal/root/spring-forward-harness-example.git
-        targetRevision: master
+        repoURL: https://github.com/suranc/spring-forward-harness-example
+        targetRevision: kind
         kustomize:
           images:
-          - "ghcr.io/suranc/spring-forward-harness-example=artifactory.harness.internal/example/spring-forward-harness-example:{{imageTag}}"
+          - "ghcr.io/suranc/spring-forward-harness-example=ghcr.io/suranc/spring-forward-harness-example:{{imageTag}}"
       destination:
         server: '{{destination.server}}'
         namespace: '{{destination.namespace}}'
