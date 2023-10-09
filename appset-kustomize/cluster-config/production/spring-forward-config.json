@@ -9,6 +9,6 @@
   },
   "harness": {
     "envId": "production",
-    "serviceId": "springforwardcustomize"
+    "serviceId": "springforwardkindkustomize"
   }
 }
