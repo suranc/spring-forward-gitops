@@ -10,5 +10,5 @@
     "envId" : "staging",
     "serviceId" : "springforwardcustomize"
   },
-  "imageTag" : "1.0.0"
+  "imageTag" : "latest"
 }
