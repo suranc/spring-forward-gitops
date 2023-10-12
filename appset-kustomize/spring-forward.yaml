@@ -24,7 +24,6 @@ spec:
         repoURL: https://github.com/suranc/spring-forward-harness-example
         targetRevision: kind
         kustomize:
-          namespace: '{{destination.namespace}}'
           images:
           - "ghcr.io/suranc/spring-forward-harness-example=ghcr.io/suranc/spring-forward-harness-example:{{imageTag}}"
       destination:
