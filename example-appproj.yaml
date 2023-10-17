@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: gitops-team-1
+  namespace: gitops-team-1
+  labels:
+    accountId: b.W50osoQJS42JItbue3ddhA.e
+    orgId: gitopsorg1
+    projectId: gitopsteam1
+spec:
+  destinations:
+  - namespace: 'gitops-team-1-*'
+    server: 'https://10.0.0.37'
+  - namespace: 'gitops-team-1-project-1'
+    server: 'https://10.0.0.37'
